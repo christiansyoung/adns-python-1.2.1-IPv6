@@ -207,7 +207,6 @@ interpret_answer(
 			}
 			break;
         case adns_r_aaaa:
-            ;
             {
                 char name[50];
                 inet_ntop(AF_INET6, answer->rrs.in6addr+i, name, sizeof(name));
