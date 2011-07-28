@@ -207,9 +207,14 @@ interpret_answer(
 			}
 			break;
         case adns_r_aaaa:
-            char* name;
-            int info = adns_rr_info(answer->type, 0, 0, 0, answer->rrs.bytes, &name);
-            a = Py_BuildValue("s", name);
+            ;
+            {
+                char* name;
+                name = malloc(sizeof(char)*50);
+                inet_ntop(AF_INET6, answer->rrs.in6addr+i, name, 50);
+                a = Py_BuildValue("s", name);
+                free(name);
+            }
             break;
 		case adns_r_hinfo:
 			{
