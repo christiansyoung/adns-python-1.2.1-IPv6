@@ -95,6 +95,7 @@ static _constant_class adns_rr[] = {
 	{ "unknown", adns_r_unknown },
 	{ "none", adns_r_none },
 	{ "A", adns_r_a },
+    { "AAAA", adns_r_aaaa },
 	{ "NSraw", adns_r_ns_raw },
 	{ "NS", adns_r_ns },
 	{ "CNAME", adns_r_cname },
@@ -205,6 +206,11 @@ interpret_answer(
 				a = Py_BuildValue("s", inet_ntoa(*v));
 			}
 			break;
+        case adns_r_aaaa:
+            char* name;
+            int info = adns_rr_info(answer->type, 0, 0, 0, answer->rrs.bytes, &name);
+            a = Py_BuildValue("s", name);
+            break;
 		case adns_r_hinfo:
 			{
 				adns_rr_intstrpair *v = \
