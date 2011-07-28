@@ -1,12 +1,19 @@
 Build Instructions
 ==================
+The package needed: http://people.debian.org/~lucab/deb/adns/source/
+Also at github: https://github.com/lucab/adns
 
+Compile this from source, or use the deb package.
+
+(This below might not be needed)
+/* 
 First, you gotta have the adns_ libraries installed somewhere. Maybe
 your OS vendor has it packaged already.
 
 .. _adns: http://www.chiark.greenend.org.uk/~ian/adns/
 
 For adns-python-1.2.0 and newer, you *must* have at least adns-1.2.
+*/
 
 Second, you gotta have Distutils_, which comes in Python 1.6 and up. If you
 have Python 1.5.2, *upgrade already*!
@@ -95,5 +102,9 @@ and older, use adns-python-1.1.1.
 
 :Author:
 	Andy Dustman <farcepest@gmail.com>
+:Modified by:
+    Christian Strand Young <christian@strandyoung.com>
+    Magnus Romnes <romnes@gmail.com>
 :Date:
 	January 27, 2007
+    Modified July, 2011
