@@ -1,0 +1,10 @@
+ADNS.py
+ChangeLog
+DNSBL.py
+GPL
+MANIFEST
+MANIFEST.in
+README
+adnsmodule.c
+pymemcompat.h
+setup.py
